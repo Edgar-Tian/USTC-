@@ -1,0 +1,29 @@
+<html>
+<head>
+    <style>
+        div{
+            height:400px;
+            width:40%;
+            margin:0 auto;
+            margin-bottom:20px;
+            margin-top:200px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <form action="/drawimagehandle" method="get" target="image_result_show">
+        自变量x:<input type="text" name="x">
+        <br>
+        x轴物理单位:<input type="text" name="xlabel">
+        <br>
+        因变量y<input type="text" name="y">
+        <br>
+        y轴物理单位:<input type="text" name="ylabel">
+        <br>
+        <button type="submit">绘图</button>
+    </form>
+    <iframe src="/drawimageres" id="iframe02" name="image_result_show" frameborder="no" height="800px" width="800px"></iframe>
+    </div>
+</body>
+</html>

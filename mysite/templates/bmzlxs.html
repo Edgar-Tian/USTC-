@@ -1,0 +1,68 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>
+        表面张力系数计算
+    </title>
+    <style>
+        div{
+            height:400px;
+            width:40%;
+            margin:0 auto;
+            margin-bottom:20px;
+            margin-top:200px;
+	    color:green;
+
+        }
+	body{
+		background:#ff99cc;
+	}
+    </style>
+</head>
+<body style="background-repeat:no-repeat;
+	        background-size:100% 100%;background-attachment:fixed">
+    <div>
+	<h1>表面张力系数不确定度计算</h1>
+        <h4>数据间用空格隔开,非特殊说明数据都应大于等于三组</h2>
+        <form action="/dwsy/bmzlxs" method="get" target="result_show">
+            劲度系数
+            <br>
+            砝码质量m(g):<input type="text" name="m">
+            <br>
+            弹簧长度X(cm):<input type="text" name="X">
+            <br>
+<!--            是否需要绘图-->
+<!--            <input type="radio" value="true">是-->
+<!--            <br>-->
+<!--            <input type="radio" value="false">否-->
+<!--            <br>-->
+            <br>
+	    <input type="radio" name="tool" value="si">金属丝(测洗洁精)
+	    <br>
+	    <input type="radio" name="tool" checked="true" value="quan">金属圈(测水)
+	    <br>
+            金属圈直径d或金属丝长度s(cm)<input type="text" name="d">
+            <br>
+<!--            金属丝长度s(cm)<input type="text" name="s">
+	    <br> -->
+            拉脱前长度l0(一个数据,cm):<input type="text" name="l0s">
+            <br>
+            拉脱后长度l(cm):<input type="text" name="ls">
+            <br>
+            置信度:
+            <br>
+            <input type="radio" name="P" value="0.68">0.68
+            <br>
+            <input type="radio" name="P" value="0.95" checked="true">0.95
+            <br>
+            <input type="radio" name="P" value="0.99">0.99
+            <br>
+            <button type="submit">计算</button>
+        </form>
+        <br>
+        <iframe src="/dwsy/bmzlxsres" id="iframe01" name="result_show" frameborder="no" height="800px" width="800px">
+        </iframe>
+<!--        <img src={{address}}>-->
+    </div>
+</body>
+</html>
