@@ -18,7 +18,7 @@ def recv(r):
 def draw_image(requests):
     requests.encoding = 'utf-8'
     data=requests.GET
-    if True:
+    try:
         x=recv(data['x'])
         y=recv(data['y'])
         xlabel=data['xlabel']
@@ -42,9 +42,9 @@ def draw_image(requests):
         if b>=0:
             context['equa']='直线方程:y=%fx+%f'%(k,b)
         else:
-            context['equa']='直线方查:y=%fx%f'%(k,b)
+            context['equa']='直线方程:y=%fx%f'%(k,b)
         return render(requests,'drawimageres.html',context)
-#    except:
-#        return HttpResponse('貌似出现了错误')
+    except:
+        return HttpResponse('貌似出现了错误')
 def result(requests):
     return render(requests,'drawimageres.html')
